@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find_by( id: params[ 'id' ] )
-    @items = @order.items
+    @items = @order.items.reverse
   end
 
   private
