@@ -1,0 +1,9 @@
+<%= render 'layouts/header' %>
+
+<div class="new-center-order-form">
+  <%= form_for @order do |f| %>
+    <%= f.hidden_field :order_number, value: rand( 1000..6000000 ).to_s %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.submit 'Begin Order!' %>
+  <% end %>
+</div>

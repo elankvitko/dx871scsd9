@@ -1,0 +1,23 @@
+<%= render 'layouts/header' %>
+
+<div class="head">
+  <h3>Order #<%= @order.order_number %> - <%= @order.order_status %></h3>
+
+  <table>
+    <tr>
+      <th>Store</th>
+      <th>Item Name</th>
+      <th>Item Model</th>
+    </tr>
+
+    <% @items.each do | item | %>
+      <tr>
+        <td><%= item.store %></td>
+        <td><%= item.name %></td>
+        <td><%= item.model_number %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= link_to "Add To This Order", new_item_path( :order_id => params[ 'id' ] ) %>
+</div>

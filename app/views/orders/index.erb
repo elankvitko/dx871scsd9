@@ -1,0 +1,16 @@
+<%= render 'layouts/header' %>
+
+<table>
+  <tr>
+    <th>Order Number</th>
+    <th>Status</th>
+  </tr>
+
+  <% @orders.each do | order | %>
+    <tr>
+      <td><%= link_to "#{ order.order_number }", order_path( order ) %></td>
+      <td><%= order.order_status %></td>
+    </tr>
+  <% end %>
+
+</table>
