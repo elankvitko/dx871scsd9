@@ -3,7 +3,7 @@
 <div class="new-item-form-area">
   <%= form_for @item do |f| %>
   <label for="store">Pick A Store</label>
-  <%= f.select :store, [ [ 'TopShop' ], [ 'Lululemon' ], [ 'PacSun' ], [ 'Zara' ], [ 'Century 21' ], [ 'Sea Dreamer The Label' ], [ 'Swimwearworld.com' ] ], { selected: 'TopShop' } %>
+  <%= f.select :store, [ [ 'TopShop' ], [ 'Lululemon' ], [ 'PacSun' ], [ 'Zara' ], [ 'Century 21' ], [ 'Sea Dreamer The Label' ], [ 'Swimwearworld.com' ], [ 'Crate & Barrel' ], [ 'H&M' ], [ 'Sunglass Hut' ], [ 'Bed Bath & Beyond' ] ], { selected: 'TopShop' } %>
   <label for="name">Name - Place Color Into Name of Item As Well!</label>
   <%= f.text_field :name %>
   <%= f.label :model_number %>
