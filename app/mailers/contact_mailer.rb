@@ -4,7 +4,7 @@ class ContactMailer < ApplicationMailer
     @email = email
     @body = body
 
-    mail to: "ekvitko@qrpgroup.com",
+    mail to: "soubazinfo@gmail.com",
          subject: 'New Contact - Soul Bazaar'
   end
 end

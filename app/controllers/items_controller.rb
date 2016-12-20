@@ -12,9 +12,23 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @item = Item.find_by( id: params[ 'id' ] )
+  end
+
+  def update
+    @item = Item.find_by( id: params[ 'id' ] )
+    @item.update_attributes( status: params[ 'item' ][ 'status' ] )
+    @order = @item.order
+
+    ChangeMailer.new_change( @order ).deliver_now
+
+    redirect_to order_path( @order )
+  end
+
   private
 
     def item_params
-      params.require( :item ).permit( :order_id, :store, :name, :model_number )
+      params.require( :item ).permit( :order_id, :store, :name, :model_number, :status )
     end
 end
