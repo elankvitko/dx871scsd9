@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   def index
-    @orders = Order.all.reverse
+    @orders = Order.all.sort_by &:created_at
+    @orders = @orders.reverse
   end
 
   def new
@@ -18,7 +19,8 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find_by( id: params[ 'id' ] )
-    @items = @order.items.reverse
+    @items = @order.items.sort_by &:created_at
+    @items = @items.reverse
   end
 
   private
