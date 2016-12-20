@@ -3085,3 +3085,12 @@
 #header a.logout-link {
 	font-size: 18px;
 }
+
+
+.td-name {
+	width: 30%;
+}
+
+.td-status {
+	width: 40%;
+}

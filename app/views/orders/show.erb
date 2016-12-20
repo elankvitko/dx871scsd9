@@ -11,12 +11,12 @@
       <th>Status</th>
     </tr>
 
-    <% @items.each do | item | %>
+    <% @items.each_with_index do | item, idx | %>
       <tr>
         <td><%= item.store %></td>
-        <td><%= item.name %></td>
+        <td class='td-name'><%= item.name %></td>
         <td><%= item.model_number %></td>
-        <td><%= item.status %></td>
+        <td class='td-status'><%= item.status %></td>
       </tr>
     <% end %>
   </table>
