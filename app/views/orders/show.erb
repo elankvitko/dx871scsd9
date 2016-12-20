@@ -8,6 +8,7 @@
       <th>Store</th>
       <th>Item Name</th>
       <th>Item Model</th>
+      <th>Status</th>
     </tr>
 
     <% @items.each do | item | %>
@@ -15,6 +16,7 @@
         <td><%= item.store %></td>
         <td><%= item.name %></td>
         <td><%= item.model_number %></td>
+        <td><%= item.status %></td>
       </tr>
     <% end %>
   </table>
