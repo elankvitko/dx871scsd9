@@ -3094,6 +3094,12 @@
 	width: 50px;
 }
 
+form.item-priority-form {
+	display: inline-block;
+	margin: 0 auto;
+	text-align: left;
+}
+
 form.item-priority-form select {
 	width: 70px;
 }
@@ -3109,11 +3115,33 @@ div.head h3 {
 	margin: 0 auto;
 }
 
+#items-table-full th {
+	padding: 0.75em 0.75em 0.75em 0.75em;
+	text-align: center;
+	font-size: 1.2em;
+}
+
+#items-table-full td {
+	text-align: center;
+}
+
 .add_item_to_order_link {
 	color: #5385c1;
   text-decoration: none;
   font-size: 16px;
   font-weight: 700;
+  padding: 20px;
+  border: 2px solid;
+  border-radius: 5px;
+}
+
+.add_item_to_order_link:hover {
+	background-color: #d62727;
+	color: #ffffff;
+	-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .view_making_order {
@@ -3148,4 +3176,9 @@ div.footer-foot-bottom {
 
 .we-ft {
 	font-weight: 700;
+}
+
+div.form-holder {
+	display: block;
+  text-align: center;
 }

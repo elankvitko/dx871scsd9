@@ -28,17 +28,19 @@
         <td class='we-ft'><%= item.model_number %></td>
         <td class='td-status we-ft'><%= item.status %></td>
         <td class='we-ft'>
-          <form class="item-priority-form" action="/items/<%= item.id %>/edit" method="patch">
-            <select name="priority">
-              <% if item.priority == 'Low' %>
+          <div class="form-holder">
+            <form class="item-priority-form" action="/items/<%= item.id %>/edit" method="patch">
+              <select name="priority">
+                <% if item.priority == 'Low' %>
                 <option value="Low">Low</option>
                 <option value="High">High</option>
-              <% else %>
+                <% else %>
                 <option value="High">High</option>
                 <option value="Low">Low</option>
-              <% end %>
-            </select>
-          </form>
+                <% end %>
+              </select>
+            </form>
+          </div>
         </td>
       </tr>
     <% end %>
