@@ -3,23 +3,64 @@
 <div class="head">
   <h3>Order #<%= @order.order_number %> - <%= @order.order_status %></h3>
 
-  <table>
+  <table id='items-table-full'>
+    <col width="70">
+    <col width="70">
+    <col width="50">
+    <col width="100">
+    <col width="10">
     <tr>
       <th>Store</th>
       <th>Item Name</th>
       <th>Item Model</th>
       <th>Status</th>
+      <th>Priority</th>
     </tr>
 
     <% @items.each_with_index do | item, idx | %>
       <tr>
         <td><%= item.store %></td>
-        <td class='td-name'><%= item.name %></td>
+        <td><%= item.name %></td>
         <td><%= item.model_number %></td>
         <td class='td-status'><%= item.status %></td>
+        <td>
+          <form class="item-priority-form" action="/items/<%= item.id %>/edit" method="patch">
+            <select name="priority">
+              <% if item.priority == 'Low' %>
+                <option value="Low">Low</option>
+                <option value="High">High</option>
+              <% else %>
+                <option value="High">High</option>
+                <option value="Low">Low</option>
+              <% end %>
+            </select>
+          </form>
+        </td>
       </tr>
     <% end %>
   </table>
-
-  <%= link_to "Add To This Order", new_item_path( :order_id => params[ 'id' ] ) %>
 </div>
+
+<div class="link-holder">
+  <%= link_to "Add To This Order", new_item_path( :order_id => params[ 'id' ] ), class: :add_item_to_order_link %>
+</div>
+
+
+<script type="text/javascript">
+  $( '.item-priority-form select' ).on( 'change', function( e ) {
+    e.preventDefault();
+
+    var target = e.target;
+    var type = target.parentElement.method;
+    var url = target.parentElement.action;
+    var data = $( target ).serialize();
+
+    $.ajax({
+      type: type,
+      url: url,
+      data: data
+    }).done( function( response ) {
+        location.reload();
+    });
+  });
+</script>

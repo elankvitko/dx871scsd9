@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url(font-awesome.min.css);
 @import "https://fonts.googleapis.com/css?family=Raleway:100,300,600";
 
 /*
@@ -3092,5 +3091,39 @@
 }
 
 .td-status {
-	width: 40%;
+	width: 50px;
+}
+
+form.item-priority-form select {
+	width: 70px;
+}
+
+div.head h3 {
+	text-align: center;
+	margin-top: 40px;
+	font-weight: 700;
+}
+
+#items-table-full {
+	width: 70%;
+	margin: 0 auto;
+}
+
+.add_item_to_order_link {
+	color: #5385c1;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.view_making_order {
+	color: #5385c1;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+div.link-holder {
+	margin-top: 40px;
+	text-align: center;
 }

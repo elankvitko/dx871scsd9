@@ -14,6 +14,10 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find_by( id: params[ 'id' ] )
+
+    if request.xhr?
+      @item.update_attributes( priority: params[ 'priority' ] )
+    end
   end
 
   def update
@@ -29,6 +33,6 @@ class ItemsController < ApplicationController
   private
 
     def item_params
-      params.require( :item ).permit( :order_id, :store, :name, :model_number, :status )
+      params.require( :item ).permit( :order_id, :store, :name, :model_number, :status, :priority )
     end
 end

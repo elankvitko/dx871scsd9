@@ -19,10 +19,12 @@
   <% end %>
 </div>
 
-<% if Order.last.items.empty? == false %>
+<div class="link-holder">
+  <% if Order.last.items.empty? == false %>
   <% if params[ 'order_id' ] %>
-    <%= link_to 'View Your Order', order_path( Order.find_by( id: params[ 'order_id' ] ) ) %>
+  <%= link_to 'View Your Order', order_path( Order.find_by( id: params[ 'order_id' ] ) ), class: :view_making_order %>
   <% else %>
-    <%= link_to 'View Your Order', order_path( Order.last ) %>
+  <%= link_to 'View Your Order', order_path( Order.last ), class: :view_making_order %>
   <% end %>
-<% end %>
+  <% end %>
+</div>
