@@ -3128,3 +3128,10 @@ div.link-holder {
 	margin-bottom: 40px;
 	text-align: center;
 }
+
+div.footer-foot-bottom {
+	width: 100%;
+  height: 15px;
+  background-color: #5385c1;
+	bottom: 0;
+}
