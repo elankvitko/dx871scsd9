@@ -18,12 +18,16 @@
     </tr>
 
     <% @items.each_with_index do | item, idx | %>
-      <tr>
-        <td><%= item.store %></td>
-        <td><%= item.name %></td>
-        <td><%= item.model_number %></td>
-        <td class='td-status'><%= item.status %></td>
-        <td>
+    <% if item.priority == 'High' %>
+      <tr class='high-prio'>
+    <% else %>
+      <tr class='low-prio'>
+    <% end %>
+        <td class='we-ft'><%= item.store %></td>
+        <td class='we-ft'><%= item.name %></td>
+        <td class='we-ft'><%= item.model_number %></td>
+        <td class='td-status we-ft'><%= item.status %></td>
+        <td class='we-ft'>
           <form class="item-priority-form" action="/items/<%= item.id %>/edit" method="patch">
             <select name="priority">
               <% if item.priority == 'Low' %>

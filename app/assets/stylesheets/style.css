@@ -3135,3 +3135,17 @@ div.footer-foot-bottom {
   background-color: #5385c1;
 	bottom: 0;
 }
+
+.high-prio {
+	background-color: #d62727 !important;
+	color: #ffffff !important;
+}
+
+.low-prio {
+	background-color: #5385c1 !important;
+  color: #ffffff !important;
+}
+
+.we-ft {
+	font-weight: 700;
+}
