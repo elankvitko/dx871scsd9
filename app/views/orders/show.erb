@@ -18,7 +18,9 @@
     </tr>
 
     <% @items.each_with_index do | item, idx | %>
-    <% if item.priority == 'High' %>
+    <% if item.status.include?( 'Picked Up!' ) || item.status.include?( 'Delivered!' ) %>
+      <tr class='stat-compl'>
+    <% elsif item.priority == 'High' %>
       <tr class='high-prio'>
     <% else %>
       <tr class='low-prio'>

@@ -3174,6 +3174,11 @@ div.footer-foot-bottom {
   color: #ffffff !important;
 }
 
+.stat-compl {
+	background-color: green !important;
+  color: #ffffff !important;
+}
+
 .we-ft {
 	font-weight: 700;
 }
