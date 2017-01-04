@@ -3187,3 +3187,36 @@ div.form-holder {
 	display: block;
   text-align: center;
 }
+
+
+.travel-area form label {
+	text-align: left;
+	color: #fff;
+	font-size: 16px;
+}
+
+.travel-area form input {
+	width: 200px;
+}
+
+.travel-area form select {
+	width: 100px;
+}
+
+.close-in-1 {
+	float: left;
+	padding-right: 100px;
+}
+
+.close-in-2 {
+	margin-top: -24px;
+}
+
+.change-bgs {
+	background-color: #ffffff !important;
+	color: #5385c1 !important;
+}
+
+.change-bgs .inner h2 {
+	color: #5385c1 !important;
+}

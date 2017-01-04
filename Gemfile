@@ -18,6 +18,8 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'devise'
 
+gem "simple_calendar"
+
 gem 'better_errors'
 
 # Use jquery as the JavaScript library
