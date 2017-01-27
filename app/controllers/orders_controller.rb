@@ -23,6 +23,14 @@ class OrdersController < ApplicationController
     @items = @items.reverse
   end
 
+  def destroy
+    if request.xhr?
+      @order = Order.find( params[ 'order' ] )
+      @order.items.destroy_all
+      @order.destroy
+    end
+  end
+
   private
 
     def order_params
